@@ -1,0 +1,403 @@
+import { Meta } from "@storybook/addon-docs";
+import Code from "./assets/code-brackets.svg";
+import Colors from "./assets/colors.svg";
+import Comments from "./assets/comments.svg";
+import Direction from "./assets/direction.svg";
+import Flow from "./assets/flow.svg";
+import Plugin from "./assets/plugin.svg";
+import Repo from "./assets/repo.svg";
+import StackAlt from "./assets/stackalt.svg";
+import svgrepo from "./assets/svgrepo.svg";
+import graph from "./assets/graph.svg";
+import online from "./assets/online.svg";
+import tag from "./assets/tag.svg";
+import wallet from "./assets/wallet.svg";
+import bomberman from "./assets/bomberman.svg";
+import boxGift from "./assets/boxGift.svg";
+import bookGift from "./assets/bookGift.svg";
+import trumpet from "./assets/trumpet.svg";
+import food from "./assets/food.svg";
+import redBook from "./assets/redBook.svg";
+
+<Meta title="Example/Introduction" />
+
+<style>
+  {`
+    .subheading {
+      --mediumdark: '#999999';
+      font-weight: 700;
+      font-size: 13px;
+      color: #999;
+      letter-spacing: 6px;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      margin-top: 40px;
+    }
+
+    .link-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      row-gap: 10px;
+    }
+
+    @media (min-width: 620px) {
+      .link-list {
+        row-gap: 20px;
+        column-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media all and (-ms-high-contrast:none) {
+    .link-list {
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr;
+      }
+    }
+
+    .link-item {
+      display: block;
+      padding: 20px;
+      border: 1px solid #00000010;
+      border-radius: 5px;
+      transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
+      color: #333333;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .link-item:hover {
+      border-color: #1EA7FD50;
+      transform: translate3d(0, -3px, 0);
+      box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+    }
+
+    .link-item:active {
+      border-color: #1EA7FD;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .link-item strong {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .link-item img {
+      height: 40px;
+      width: 40px;
+      margin-right: 15px;
+      flex: none;
+    }
+
+    .link-item span,
+    .link-item p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .tip {
+      display: inline-block;
+      border-radius: 1em;
+      font-size: 11px;
+      line-height: 12px;
+      font-weight: 700;
+      background: #E7FDD8;
+      color: #66BF3C;
+      padding: 4px 12px;
+      margin-right: 10px;
+      vertical-align: top;
+    }
+
+    .tip-wrapper {
+      font-size: 13px;
+      line-height: 20px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .tip-wrapper code {
+      font-size: 12px;
+      display: inline-block;
+    }
+  `}
+</style>
+
+# 欢迎回到网页版元宇宙笔记
+
+**笔记主要以中级教程.重点原件交互为主。🗃 用到的基础知识下列**。`stories`🍕<br />
+[**blender**](https://www.blender.org)从三维建模，贴图，渲染，动画等技术。🍰<br />
+[**html5,css scss, javascript **]()部分前端网络使用到基础知识。🌒<br />
+[**Three.js**](https://threejs.org)它可以在网页 生成三维场景 全局照明，动画渲染，烘焙贴图，使用户定义出高品质的硬件反射效果。🐚<br />
+[**React**](https://beta.reactjs.org) 的基础知识 Suspense, useEffect, useRef, useState 常用钩子的使用方法 🌿<br />
+[**ReactNative**](https://reactnative.dev) 手机版使用 🦬<br />
+[**react-three/fiber**](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction) 框架基础知误 🐄<br />
+[**react-three/drei**](https://github.com/pmndrs/drei#readme) 使用的现有的函数 🌍<br />
+[**react-three/cannon**](https://github.com/pmndrs/use-cannon/tree/master/packages/react-three-cannon#readme/)物理钩子的使用方法。🐰<br />
+[**MongoDB**](https://www.mongodb.com)数据后台。🐹<br />
+[**node**](https://nodejs.org)JavaScript 运行时环境。🔥<br />
+[**Express**](https://expressjs.com) HTTP 中间件。☀️<br />
+[**react-spring**](https://www.react-spring.dev/) 弹簧动画。🌠<br />
+[**r3f-spline**](https://spline.design/) 样条动画。🌊<br />
+[**react-postprocessing**](https://github.com/pmndrs/react-postprocessing/) 反应效果后处理。🌴<br />
+[**valtio**](https://github.com/pmndrs/use-cannon/tree/master/packages/react-three-cannon#readme/)状态代理。🌊<br />
+[**lodash-es/clamp**](https://lodash.com/) 数组 对像 迭代。🌊<br />
+
+**共分为 4 个部分，25 章，各部分内容概要如下：🖇**<br />
+**第 1 部分** 基本操作、基础建模与动画如识,以及灯光、材质和摄像机的基本应用。并通过教室模型、玩偶、🐶 建筑和别墅模型等完整的实例边学边练，富有成就感。📚<br />
+**第 2 部分**建模。逐步了解编辑多边形、编辑面片、NURBS 等较为复杂的建模方法。通过代表性的实例，如赛车模型、家居模型，角色建模等的制作，🔧<br />
+**第 3 部分** 质感在材质和渲染方面也有重大的改进。烘肴贴图等世界一流技术。本部分进行了较为深入而详细的探讨，并借助实例展示了关键技术的应用技巧。💻<br />
+**第 4 部分** 动画。包括全新的轨迹视图、骨骼、蒙皮、角色动画制作以及粒子特效等，最后还介绍了重要插件和后期制作方面的内容。❤️<br />
+**第 5 部分** 实例人物场景 🚗 人物动作动做切换 人物行走移动。树场景树的随机 🌴🌳，再到树是否重叠的步骤。汽车调试到物理碰撞，坡道物理特性第三视觉与场景切换 🚀<br />
+
+**常用** Math.PI / -2 表示圆的周长与其直径之比
+
+<div className="subheading">React框架常用函数</div>
+
+<div className="link-list">
+  <a
+    className="link-item"
+    href="https://beta.reactjs.org/learn/synchronizing-with-effects"
+    target="_blank"
+  >
+    <img src={Colors} alt="colors" />
+    <span>
+      <strong>useEffect</strong>
+      状态控制钩子 可让您将组件与外部系统同步。 如暂停&播放 鼠标事件 键盘输入事件
+    </span>
+  </a>
+
+<a
+  className="link-item"
+  href="https://beta.reactjs.org/reference/react/useRef#referencing-a-value-with-a-ref"
+  target="_blank"
+>
+  <img src={Flow} alt="flow" />
+  <span>
+    <strong>useRef</strong>
+    参考信息钩子 可让您引用渲染不需要的值
+  </span>
+</a>
+
+<a
+  className="link-item"
+  href="https://beta.reactjs.org/reference/react/useState"
+  target="_blank"
+>
+  <img src={Plugin} alt="plugin" />
+  <span>
+    <strong>useState</strong>
+    使用状态钩子 可让您向组件添加状态变量。
+  </span>
+</a>
+
+<a className="link-item" href="https://storybook.js.org/" target="_blank">
+  <img src={StackAlt} alt="Build" />
+  <span>
+    <strong>Suspense</strong>
+    悬挂组件(进度条) 允许显示回退，直到其子项完成加载。
+  </span>
+</a>
+
+<a
+  className="link-item"
+  href="https://beta.reactjs.org/reference/react/createContext"
+  target="_blank"
+>
+  <img src={online} alt="online" />
+  <span>
+    <strong>createContext</strong>
+    创建上下文 允许您创建组件可以提供或读取的上下文。
+  </span>
+</a>
+<a
+  className="link-item"
+  href="https://beta.reactjs.org/reference/react/useContext"
+  target="_blank"
+>
+  <img src={tag} alt="tag" />
+  <span>
+    <strong>useContext</strong>
+    使用上下文 可让您从组件中读取和订阅上下文。
+  </span>
+</a>
+
+<a
+  className="link-item"
+  href="https://beta.reactjs.org/reference/react/useContext"
+  target="_blank"
+>
+  <img src={tag} alt="tag" />
+  <span>
+    <strong>useMemo</strong>
+    记忆钩子 可让您在重新渲染之间缓存计算结果。跳过昂贵的重新计算 跳过组件的重新渲染
+  </span>
+</a>
+
+<a
+  className="link-item"
+  href="https://beta.reactjs.org/reference/react/useContext"
+  target="_blank"
+>
+  <img src={tag} alt="tag" />
+  <span>
+    <strong>useContext</strong>
+    使用上下文 可让您从组件中读取和订阅上下文。
+  </span>
+</a>
+
+</div>
+
+<div className="subheading">fibef框架常用函数</div>
+
+<div className="link-list">
+  <a
+    className="link-item"
+    href="https://docs.pmnd.rs/react-three-fiber/api/hooks#usethree"
+    target="_blank"
+  >
+    <img src={trumpet} alt="trumpet" />
+    <span>
+      <strong>useThree</strong>
+      使用Three 此挂钩使您可以访问包含默认渲染器、场景、相机等的状态模型。它还会为您提供屏幕和视口坐标中画布的当前大小。
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://docs.pmnd.rs/react-three-fiber/api/hooks#useframe"
+    target="_blank"
+  >
+    <img src={svgrepo} alt="svgrepo" />
+    <span>
+      <strong>useFrame</strong>
+      使用框架 此挂钩允许您在每个渲染帧上执行代码，如运行效果、更新控件等。您收到状态（与
+      相同useThree）和时钟增量。
+    </span>
+  </a>
+
+<a
+  className="link-item"
+  href="https://docs.pmnd.rs/react-three-fiber/api/hooks#useloader"
+  target="_blank"
+>
+  <img src={redBook} alt="redBook " />
+  <span>
+    <strong>useLoader</strong>
+    使用加载器 此挂钩加载资产并挂起，以便更轻松地进行回退和错误处理。
+  </span>
+</a>
+
+<a
+  className="link-item"
+  href="https://docs.pmnd.rs/react-three-fiber/api/hooks#usegraph"
+  target="_blank"
+>
+  <img src={graph} alt="graph" />
+  <span>
+    <strong>useGraph</strong>
+    使用图表 便利挂钩，它从任何Object3D.
+  </span>
+</a>
+<a
+    className="link-item"
+    href="https://docs.pmnd.rs/react-three-fiber/tutorials/how-it-works#the-attach-props"
+    target="_blank"
+  >
+    <img src={wallet} alt="wallet" />
+    <span>
+      <strong>attach</strong>
+      精确地告诉渲染器将每个组件附加到什么属性
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://docs.pmnd.rs/react-three-fiber/tutorials/how-it-works#props"
+    target="_blank"
+  >
+    <img src={bomberman} alt="bomberman" />
+    <span>
+      <strong>Props属性</strong>
+      使用 Fiber，你可以将任何 three.js 属性作为 React 属性传递，它将被分配给构造的对象
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://docs.pmnd.rs/react-three-fiber/tutorials/how-it-works#pointer-events"
+    target="_blank"
+  >
+    <img src={bookGift} alt="bookGift" />
+    <span>
+      <strong>Pointer Events</strong>
+      指针事件由 Fiber 透明地处理。在启动时，它将创建一个用于鼠标拾取的光线投射器。
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://docs.pmnd.rs/react-three-fiber/tutorials/how-it-works#render-loop"
+    target="_blank"
+  >
+    <img src={boxGift} alt="boxGift" />
+    <span>
+      <strong>RenderLoop</strong>
+      使用 Fiber，你可以将任何 three.js 属性作为 React 属性传递，它将被分配给构造的对象
+    </span>
+  </a>
+</div>
+
+<div className="subheading">three重要</div>
+
+<div className="link-list">
+  <a
+    className="link-item"
+    href="https://threejs.org/docs/#api/zh/core/Object3D.updateMatrixWorld"
+    target="_blank"
+  >
+    <img src={Repo} alt="repo" />
+    <span>
+      <strong>Object3D</strong>
+      这是 three.js 中大多数对象的基类，并提供一组用于在 3D 空间中操作对象的属性和方法。
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://threejs.org/docs/index.html#api/zh/math/Matrix3"
+    target="_blank"
+  >
+    <img src={Direction} alt="direction" />
+    <span>
+      <strong>三维矩阵Matrix3</strong>
+      一个表示3X3矩阵matrix.的类。
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://threejs.org/docs/index.html#api/zh/math/Vector2"
+    target="_blank"
+  >
+    <img src={Code} alt="code" />
+    <span>
+      <strong>向量Vector2</strong>
+      表示2D vector（二维向量）的类。
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://threejs.org/docs/index.html#api/zh/core/Clock"
+    target="_blank"
+  >
+    <img src={Comments} alt="comments" />
+    <span>
+      <strong>Clock</strong>
+      该对象用于跟踪时间。
+    </span>
+  </a>
+</div>
+
+<div className="tip-wrapper">
+  <span className="tip">Tip</span>Edit the Markdown in{" "}
+  <code>stories/Introduction.stories.mdx</code>
+</div>
